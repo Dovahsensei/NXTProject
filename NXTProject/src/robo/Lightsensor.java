@@ -12,7 +12,7 @@ public class Lightsensor {
 	int white;	//Boden
 	int black;	//Linie
 	int correction;	//Mittelwert zwischen white und black
-	LightSensor ls;
+	LightSensor ls;	//Lichtsensor
 	TouchSensor ts;
 	
 	
