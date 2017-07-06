@@ -37,12 +37,12 @@ public class Lightsensor {
 		for(;;){
 			System.out.println(ls.getLightValue());
 			if(ls.getLightValue() < correction){
-				Motor.C.setSpeed(380);
-				Motor.A.setSpeed(340);
+				Motor.C.setSpeed(100);
+				Motor.A.setSpeed(200);
 			}
 			if(ls.getLightValue() > correction){
-				Motor.C.setSpeed(340);
-				Motor.A.setSpeed(380);
+				Motor.C.setSpeed(200);
+				Motor.A.setSpeed(100);
 			}
 			if(ts.isPressed()){
 				break;
