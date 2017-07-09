@@ -13,11 +13,11 @@ public class Lightsensor {
 	int black;	//Linie
 	int correction;	//Mittelwert zwischen white und black
 	LightSensor ls;	//Lichtsensor
-	TouchSensor ts;
+	TouchSensor ts;	//Berührungssensor
 	
 	
 	
-	Lightsensor(){
+	public Lightsensor(){
 		ls = new LightSensor(SensorPort.S4);
 		ts = new TouchSensor(SensorPort.S1);
 		newLine();
@@ -25,10 +25,10 @@ public class Lightsensor {
 	}
 	
 	public void newLine(){
-		System.out.println("white");
+		System.out.println("Set on white and press button");
 		Button.waitForAnyPress();
 		white = ls.getLightValue();
-		System.out.println("black");
+		System.out.println("Set on black and press button");
 		Button.waitForAnyPress();
 		black = ls.getLightValue();
 	}
