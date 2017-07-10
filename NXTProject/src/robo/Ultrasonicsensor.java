@@ -18,9 +18,9 @@ public class Ultrasonicsensor {
 	Ultrasonicsensor() {
 		us = new UltrasonicSensor(SensorPort.S2);
 		ts = new TouchSensor(SensorPort.S1);
-		System.out.println("Gewünschter Abstand zur Wand");
 		Button.waitForAnyPress();
 		distance = us.getDistance();
+		System.out.println("Gewünschter Abstand zur Wand: " + distance)
 		Motor.C.setSpeed(v);
 		Motor.A.setSpeed(v);
 		Motor.C.forward();
