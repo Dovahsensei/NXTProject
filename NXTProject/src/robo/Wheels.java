@@ -5,12 +5,10 @@ import lejos.nxt.Motor;
 import lejos.nxt.MotorPort;
 import lejos.nxt.NXTRegulatedMotor;
 
-public class Wheels {
+public class Wheels extends Motor{
 	public static final NXTRegulatedMotor RightWheel = new NXTRegulatedMotor(MotorPort.A);
 	public static final NXTRegulatedMotor LeftWheel = new NXTRegulatedMotor(MotorPort.C);
-	int vRight; //speed right motor
-	int vLeft; //speed left motor
-		
+	int speed; //speed	
 		
 	public Wheels(){
 		vRight = 0;
