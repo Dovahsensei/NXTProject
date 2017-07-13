@@ -4,24 +4,27 @@ import lejos.nxt.ADSensorPort;
 import lejos.nxt.Button;
 import lejos.nxt.LightSensor;
 
-public class NXTLightSensor extends LightSensor{
-	
+public class NXTLightSensor extends LightSensor {
+
 	int black;
 	int white;
 	int correction;
-	
-	public NXTLightSensor(ADSensorPort port){
+
+	public NXTLightSensor(ADSensorPort port) {
 		super(port);
 	}
-	
-	public void newLine(){
+
+	public void newLine() {
 		System.out.println("Set on ground and press button");
 		Button.waitForAnyPress();
 		white = getLightValue();
 		System.out.println("Set on line and press button");
 		Button.waitForAnyPress();
 		black = getLightValue();
+		correction = (white+black)/2;
 	}
-	
 
+	public static void main(String[] args) {
+
+	}
 }
