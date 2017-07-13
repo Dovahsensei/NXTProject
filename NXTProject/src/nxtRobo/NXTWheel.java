@@ -10,7 +10,4 @@ public class NXTWheel extends NXTRegulatedMotor{
 	public NXTWheel(TachoMotorPort port){
 		super(port);
 	}
-	public static void main(String[] args) {
-		
-	}
 }

@@ -9,18 +9,6 @@ public class NXTAxis {
 	public static final NXTWheel leftWheel = new NXTWheel(MotorPort.C);
 	
 	public NXTAxis(){
-//		correctCurve(50, -50);
-//		try{
-//			Thread.sleep(4000);	
-//		} catch(Exception e){
-//			
-//		}
-//		correctCurve(-50, 50);
-//		try{
-//			Thread.sleep(4000);	
-//		} catch(Exception e){
-//			
-//		}
 	}
 	
 	public void correctCurve(int correctionRightWheel, int correctionLeftWheel){
@@ -44,9 +32,5 @@ public class NXTAxis {
 		}
 		rightWheel.rotate(-396/2, true);
 		leftWheel.rotate(396/2);
-	}
-	
-	public static void main(String[] arg){
-		NXTAxis ax = new NXTAxis();
 	}
 }

@@ -13,8 +13,4 @@ public class NXTUltrasonicS extends UltrasonicSensor{
 	public void setOptimalDistance(){
 		optimalDistance = getDistance();
 	}
-	
-	public static void main(String[] args) {
-		
-	}
 }

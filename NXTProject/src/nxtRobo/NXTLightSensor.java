@@ -23,8 +23,4 @@ public class NXTLightSensor extends LightSensor {
 		black = getLightValue();
 		correction = (white + black) / 2;
 	}
-
-	public static void main(String[] args) {
-
-	}
 }

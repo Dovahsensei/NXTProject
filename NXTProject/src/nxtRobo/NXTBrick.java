@@ -1,5 +1,6 @@
 package nxtRobo;
 
+import lejos.nxt.LCD;
 import lejos.nxt.SensorPort;
 import lejos.nxt.TouchSensor;
 
@@ -13,15 +14,16 @@ public class NXTBrick {
 	public NXTBrick() {
 
 		ls.newLine();
-		followLine(ls.correction, ls.getLightValue());
+		followLine(ls.correction);
 		ax.backAndTurnRight();
 		us.setOptimalDistance();
-		followWall(us.optimalDistance, us.getDistance());
+		followWall(us.optimalDistance);
 
 	}
 
-	public void followLine(int correction, int lightValue) {
+	public void followLine(int correction) {
 		while (true) {
+			System.out.println("actual lightvalue: " + ls.getLightValue());
 			if (ls.getLightValue() < correction) {
 				ax.correctCurve(50, -50);
 			}
@@ -31,20 +33,26 @@ public class NXTBrick {
 			if (ts.isPressed()) {
 				break;
 			}
+			LCD.clear();
 		}
 	}
 
-	public void followWall(int optimalDistance, int actualDistance) {
+	public void followWall(int optimalDistance) {
 		while (true) {
-			if (actualDistance > optimalDistance) {
+			System.out.println("actual distance: " + us.getDistance());
+			if (us.getDistance() > optimalDistance) {
 				ax.correctCurve(20, -20);
 			}
-			if (actualDistance < optimalDistance) {
+			if (us.getDistance() < optimalDistance) {
 				ax.correctCurve(-20, 20);
+			}
+			if (us.getDistance()  == optimalDistance){
+				ax.correctCurve(0, 0);
 			}
 			if (ts.isPressed()) {
 				break;
 			}
+			LCD.clear();
 		}
 	}
 
