@@ -7,9 +7,9 @@ import lejos.nxt.TouchSensor;
 public class NXTBrick {
 
 	public static final NXTAxis ax = new NXTAxis();
-	public static final NXTUltrasonicS us = new NXTUltrasonicS(SensorPort.S2);
-	public static final NXTLightSensor ls = new NXTLightSensor(SensorPort.S4);
-	public static final TouchSensor ts = new TouchSensor(SensorPort.S1);
+	public static final NXTUltrasonicS us = new NXTUltrasonicS(SensorPort.S1);
+	public static final NXTLightSensor ls = new NXTLightSensor(SensorPort.S2);
+	public static final TouchSensor ts = new TouchSensor(SensorPort.S3);
 
 	public NXTBrick() {
 
@@ -17,7 +17,7 @@ public class NXTBrick {
 		followLine(ls.correction);
 		ax.backAndTurnRight();
 		us.setOptimalDistance();
-		followWall(us.optimalDistance);
+		followWall(us.getOptimalDistance());
 
 	}
 
@@ -29,6 +29,9 @@ public class NXTBrick {
 			}
 			if (ls.getLightValue() > correction) {
 				ax.correctCurve(-50, 50);
+			}
+			if (ls.getLightValue() == correction) {
+				ax.correctCurve(0, 0);
 			}
 			if (ts.isPressed()) {
 				break;
@@ -57,9 +60,40 @@ public class NXTBrick {
 	}
 
 	public static void main(String[] args) {
-
+		
 		NXTBrick brain = new NXTBrick();
-
+		
 	}
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
