@@ -11,11 +11,11 @@ public class NXTAxis {
 		
 	}
 	
-	public void correctCurve(int correctionRightWheel, int correctionLeftWheel){	//Methode zur Korrektur der Richtung
-		rightWheel.setSpeed(rightWheel.normalVelocity + correctionRightWheel);		//Anpassung der Geschwindigkeit des rechten Rads
-		leftWheel.setSpeed(leftWheel.normalVelocity + correctionLeftWheel);			//Anpassung der Geschwindigkeit des linken Rads
-		rightWheel.forward();		//aktivierung des linken Rads in Richtug vorwärts
-		leftWheel.forward();		//aktivierung des rechten Radsin Richtug vorwärts
+	public void correctCurve(int correctionRightWheel, int correctionLeftWheel){
+		rightWheel.setSpeed(rightWheel.normalVelocity + correctionRightWheel);
+		leftWheel.setSpeed(leftWheel.normalVelocity + correctionLeftWheel);
+		rightWheel.forward();
+		leftWheel.forward();
 	}
 	
 	public void backAndTurnRight(){		//Methode um von einer Wands orthogonal wegzufahren und sich zu drehen
