@@ -8,7 +8,7 @@ public class NXTLightSensor extends LightSensor {	//Tochterklasse von LightSenso
 
 	private int black;	//Lichtwertangabe des "weißen" Untergrunds, deklaration
 	private int white;	//Lichtwertangabe der "schwarzen" Linie, deklaration
-	int correction;		//Mittelwert zwischen black und white, deklaration
+	private int correction;		//Mittelwert zwischen black und white, deklaration
 
 	public NXTLightSensor(ADSensorPort port) {	//Konstruktor mit portzuweisung im Konstruktorkopf
 		super(port);							//standart Konstruktor von UltrasonicSensor
@@ -22,5 +22,9 @@ public class NXTLightSensor extends LightSensor {	//Tochterklasse von LightSenso
 		Button.waitForAnyPress();								//Knopfdruck zum Festlegen von black
 		black = getLightValue();								//initialisierung von black über Lichtwert den der Sensor scannt
 		correction = (white + black) / 2;						//initialisierung von correction
+	}
+	
+	public int getCorrection() {
+		return correction;
 	}
 }

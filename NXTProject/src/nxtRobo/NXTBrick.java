@@ -2,6 +2,7 @@ package nxtRobo;
 
 import lejos.nxt.LCD;
 import lejos.nxt.SensorPort;
+import lejos.nxt.Sound;
 import lejos.nxt.TouchSensor;
 
 public class NXTBrick {			
@@ -13,7 +14,8 @@ public class NXTBrick {
 	public NXTBrick() {
 
 		ls.newLine();							//Aufrufen der Methode newLine() der Klasse LightSensor
-		followLine(ls.correction);				//Aufrufen der Methode followLine() mit dem Parameter int correction
+		followLine(ls.getCorrection());				//Aufrufen der Methode followLine() mit dem Parameter int correction
+		
 		ax.backAndTurnRight();					//Aufrufen der Methode backAndTurnRight() aus der Klasse NXTAxis
 		us.setOptimalDistance();				//Aufrufen der Methode setOptimalDistance() aus der Klasse UltrasonicSensor
 		followWall(us.getOptimalDistance());	//Aufrufen der Methode folowWall() mit dem Parameter int getOptimalDistance
@@ -33,6 +35,7 @@ public class NXTBrick {
 				ax.correctCurve(0, 0);						//dann wird der bleibt die Gschwindigkeit beider Motoren gleich
 			}
 			if (ts.isPressed()) {							//Sobald der Berührungssensor gedrückt ist, wird die Schleife abgebrochen
+				Sound.buzz();
 				break;
 			}
 			LCD.clear();									//Das Display wird geleert
@@ -52,6 +55,7 @@ public class NXTBrick {
 				ax.correctCurve(0, 0);						//der rechte Motor um 20 rounds/min abgebremst und der linke Motor um 20 rounds/min beschleunigt
 			}
 			if (ts.isPressed()) {							//sobald der Berührungssensor gedrückt wird, wird die Schleife abgebrochen.
+				Sound.buzz();
 				break;
 			}
 			LCD.clear();									//das Display wird geleert
@@ -64,35 +68,3 @@ public class NXTBrick {
 		
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
