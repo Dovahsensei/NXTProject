@@ -54,13 +54,13 @@ public class NXTBrick {
 			if (ts.isPressed()) {							//sobald der Berührungssensor gedrückt wird, wird die Schleife abgebrochen.
 				break;
 			}
-			LCD.clear();									//das Display wird gesäubert
+			LCD.clear();									//das Display wird geleert
 		}
 	}
 
 	public static void main(String[] args) {
 		
-		NXTBrick brain = new NXTBrick();					//Konstruktor des Objekts brain 	
+		NXTBrick brain = new NXTBrick();					//Erschaffen des Objekts brain 	
 		
 	}
 }
