@@ -28,9 +28,11 @@ public class Lightsensor {
 		System.out.println("Set on white and press button");
 		Button.waitForAnyPress();
 		white = ls.getLightValue();
+		LCD.clear();
 		System.out.println("Set on black and press button");
 		Button.waitForAnyPress();
 		black = ls.getLightValue();
+		LCD.clear();
 	}
 	
 	public void followLine(){
