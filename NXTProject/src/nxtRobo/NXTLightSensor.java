@@ -6,8 +6,8 @@ import lejos.nxt.LightSensor;
 
 public class NXTLightSensor extends LightSensor {
 
-	int black;
-	int white;
+	private int black;
+	private int white;
 	int correction;
 
 	public NXTLightSensor(ADSensorPort port) {
@@ -21,7 +21,7 @@ public class NXTLightSensor extends LightSensor {
 		System.out.println("Set on line and press button");
 		Button.waitForAnyPress();
 		black = getLightValue();
-		correction = (white+black)/2;
+		correction = (white + black) / 2;
 	}
 
 	public static void main(String[] args) {

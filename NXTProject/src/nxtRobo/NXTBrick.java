@@ -22,11 +22,11 @@ public class NXTBrick {
 
 	public void followLine(int correction, int lightValue) {
 		while (true) {
-			if (lightValue < correction) {
-				ax.correctCurve(-50, 50);
-			}
-			if (lightValue > correction) {
+			if (ls.getLightValue() < correction) {
 				ax.correctCurve(50, -50);
+			}
+			if (ls.getLightValue() > correction) {
+				ax.correctCurve(-50, 50);
 			}
 			if (ts.isPressed()) {
 				break;
